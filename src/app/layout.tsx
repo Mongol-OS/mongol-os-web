@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
+import SiteNav from "@/components/site-nav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <SiteNav />
         {children}
         <footer className="border-t border-zinc-200 bg-white px-6 py-6 text-sm dark:border-zinc-800 dark:bg-black">
           <nav className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-center gap-4 text-zinc-600 dark:text-zinc-300">
