@@ -1,16 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/code-of-conduct", label: "Code of Conduct" },
-  { href: "/privacy-statement", label: "Privacy Statement" },
-  { href: "/terms-of-use", label: "Terms of Use" },
-  { href: "/sponsors-and-contributors", label: "Sponsors & Contributors" },
-];
+const navItems = [{ href: "/", label: "Home" }];
 
 export default function SiteNav() {
   const pathname = usePathname();
@@ -26,8 +21,19 @@ export default function SiteNav() {
   return (
     <header className="border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-black">
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between">
-        <Link href="/" className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
-          Mongol OS
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-base font-semibold text-zinc-900 dark:text-zinc-50"
+        >
+          <Image
+            src="/mongol-os-logo.png"
+            alt="Mongol OS logo"
+            width={28}
+            height={28}
+            className="h-7 w-7 rounded-sm"
+            priority
+          />
+          <span>Mongol OS</span>
         </Link>
         <button
           type="button"
