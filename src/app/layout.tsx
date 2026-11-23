@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mongol OS",
   description: "Official website for Mongol OS",
+  icons: {
+    icon: "/mongol-os-logo.png",
+    shortcut: "/mongol-os-logo.png",
+    apple: "/mongol-os-logo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
