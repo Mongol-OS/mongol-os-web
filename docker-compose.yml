@@ -1,0 +1,26 @@
+services:
+  mongol-os-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mongol-os-web
+    restart: unless-stopped
+    mem_limit: 512m
+    pids_limit: 200
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=mailserver-proxy"
+      - "traefik.http.routers.mongol-os-web.rule=Host(`mongol-os.org`)"
+      - "traefik.http.routers.mongol-os-web.entrypoints=websecure"
+      - "traefik.http.routers.mongol-os-web.tls=true"
+      - "traefik.http.routers.mongol-os-web.tls.certresolver=letsencrypt"
+      - "traefik.http.services.mongol-os-web.loadbalancer.server.port=3000"
+
+networks:
+  proxy:
+    external: true
+    name: mailserver-proxy
