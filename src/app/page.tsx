@@ -9,8 +9,9 @@ export default function Home() {
           Mongol OS
         </h1>
         <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-300">
-          Welcome to the new official website. This Next.js project is now ready
-          for your content, pages, and deployment pipeline.
+          Mongol OS is a Debian-based Linux distribution focused on stability,
+          localization, and a practical desktop experience for Mongolian users
+          and contributors worldwide.
         </p>
       </main>
     </div>

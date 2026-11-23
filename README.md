@@ -1,49 +1,56 @@
-This is the official website project for `mongol-os.org`, built with [Next.js](https://nextjs.org).
+# Mongol OS Website
 
-## Getting Started
+Official website source for `https://mongol-os.org`, representing the Mongolian Debian-based Linux OS project.
 
-First, run the development server:
+## For Contributors
 
+### Requirements
+- Node.js 20+ (or current LTS)
+- npm
+- Docker (for production-style local deploy)
+
+### Local development
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Quality checks
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Project structure
+- `src/app/page.tsx` — homepage
+- `src/app/code-of-conduct/page.tsx` — Code of Conduct page
+- `src/app/privacy-statement/page.tsx` — Privacy Statement page
+- `src/app/terms-of-use/page.tsx` — Terms of Use page
+- `src/app/sponsors-and-contributors/page.tsx` — Sponsors & Contributors page
+- `src/app/layout.tsx` — global layout and footer navigation
 
-## Deploy with Docker + Traefik (VPS)
+## Deployment (VPS)
 
-This repo includes production deployment files:
-
+This repo includes:
 - `Dockerfile`
 - `docker-compose.yml`
 
-Start or update deployment:
-
+Manual deploy:
 ```bash
 docker compose up -d --build
 ```
 
-## Auto-deploy schedule
+Production routing:
+- Canonical site: `https://mongol-os.org`
+- `www` and alias domains are redirected to the canonical domain.
 
-This VPS is configured to auto-deploy `main` every 24 hours using a systemd timer.
-If you need immediate deployment after a push, run:
+## Auto-deploy
 
+The VPS runs a systemd timer that checks `main` every 24 hours and deploys when changed.
+
+Immediate deploy trigger:
 ```bash
 sudo systemctl start mongol-os-web-autodeploy.service
 ```
-
-The compose file publishes the service to Traefik on:
-
-- `https://mongol-os.org`
-
-The `www.mongol-os.org` alias is expected to be redirected to the canonical domain by your edge routing config.
