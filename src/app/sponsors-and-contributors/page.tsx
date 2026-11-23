@@ -5,34 +5,44 @@ export default function SponsorsAndContributorsPage() {
         Sponsors &amp; Contributors
       </h1>
       <p className="mt-6 text-zinc-700 dark:text-zinc-300">
-        Mongol OS exists through community effort. We thank all sponsors,
-        maintainers, translators, testers, and contributors helping build a
-        Debian-based OS for Mongolian users.
+        Mongol OS is made possible by people who contribute their time,
+        knowledge, resources, and support. Thank you to everyone helping build
+        and share a Mongolian Debian-based Linux operating system.
       </p>
+
       <h2 className="mt-10 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
         Sponsors
       </h2>
       <p className="mt-4 text-zinc-700 dark:text-zinc-300">
-        Sponsor names and organizations will be listed here. If you want to
-        support infrastructure, development, or localization, please contact the
-        maintainers.
+        We are grateful to the organizations and individuals who support the
+        project. Sponsor names and links will be listed here after they are
+        confirmed and approved for publication.
       </p>
+
       <h2 className="mt-10 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
         Contributors
       </h2>
       <p className="mt-4 text-zinc-700 dark:text-zinc-300">
-        Contributors include code authors, documentation writers, QA testers,
-        package maintainers, and community members. Recognition will be updated
-        as contributions are merged.
+        Contributions come in many forms: developing and testing the operating
+        system, translating and reviewing content, reporting issues, improving
+        documentation, helping users, and sharing feedback. We appreciate each
+        person who helps the project move forward.
       </p>
+      <p className="mt-4 text-zinc-700 dark:text-zinc-300">
+        Individual credits should be added here from verified project records,
+        with each contributor's preferred name and consent for public
+        recognition.
+      </p>
+
       <h2 className="mt-10 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-        How to contribute
+        Get involved
       </h2>
-      <ul className="mt-4 list-disc space-y-2 pl-6 text-zinc-700 dark:text-zinc-300">
-        <li>Open issues for bugs, ideas, and feature requests.</li>
-        <li>Submit pull requests with focused, reviewable changes.</li>
-        <li>Help with translation, testing, documentation, and support.</li>
-      </ul>
+      <p className="mt-4 text-zinc-700 dark:text-zinc-300">
+        Interested in contributing or supporting Mongol OS? Visit the official
+        website and project repository for current ways to participate.
+        Contributions of code, testing, translation, design, documentation, and
+        community support are welcome.
+      </p>
     </main>
   );
 }
