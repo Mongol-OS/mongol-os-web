@@ -33,6 +33,15 @@ Start or update deployment:
 docker compose up -d --build
 ```
 
+## Auto-deploy schedule
+
+This VPS is configured to auto-deploy `main` every 24 hours using a systemd timer.
+If you need immediate deployment after a push, run:
+
+```bash
+sudo systemctl start mongol-os-web-autodeploy.service
+```
+
 The compose file publishes the service to Traefik on:
 
 - `https://mongol-os.org`
